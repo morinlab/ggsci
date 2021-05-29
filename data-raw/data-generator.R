@@ -16,6 +16,22 @@ ggsci_db$"npg"$"nrc" <- c(
   "RomanCoffee" = "#7E6148", "Sandrift" = "#B09C85"
 )
 
+ggsci_db$"ash"$"b-cell" =  c(
+  "DLBCL"="#479450",
+  "B-ALL"="#C1C64B",
+  "BL"="#926CAD",
+  "FL"="#EA8368",
+  "CLL"="#889BE5",
+  "MCL"="#F37A20",
+  "MM"="#CC9A42",
+  "COMFL"="#8BBC98",
+  "PBL" = "#E058C0",
+  "DLBCL-BL-like"="#34C7F4",
+  "HGBL"="#B23F52",
+  "SCBC"="#8c9c90",
+  "UNSPECIFIED"="#cfba7c"
+)
+
 ggsci_db$"ash"$"blood" <-c(
   "Red" = "#c41230", "Blue"="#115284","Green" = "#39b54b",
   "Purple" = "#5c266c", "Orange"="#fe9003","Green" = "#046852",
