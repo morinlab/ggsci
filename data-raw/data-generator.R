@@ -33,6 +33,16 @@ ggsci_db$"ash"$"b-cell" =  c(
   "SCBC"="#8c9c90",
   "UNSPECIFIED"="#cfba7c"
 )
+ggsci_db$"ash"$"hmrn" <-c(
+  "BCL2-MYC" = "#52000F",
+  "BCL2"="#721F0F",
+  "SOCS1/SGK1"="#D66B1F",
+  "TET2/SGK1"="#C41230",
+  "MYD88"="#3B5FAC",
+  "NOTCH2"="#7F3293",
+  "NOTCH1" = "#55B55E",
+  "Other"="#ACADAF" 
+)
 
 ggsci_db$"ash"$"blood" <-c(
   "Red" = "#c41230", "Blue"="#115284","Green" = "#39b54b",
@@ -44,38 +54,39 @@ ggsci_db$"ash"$"blood" <-c(
 )
 
 ggsci_db$"ash"$"harvard" <-c(
-  
-  "C2" = "#5b6d8a",
   "C3" = "#721F0F",
   "C4" = "#C41230",
   "C5"= "#3B5FAC",
   "C1" = "#7F3293",
+  "C2" = "#5b6d8a",
   "C0" = "#ACADAF"
+
 )
 
 ggsci_db$"ash"$"coo" <-c(
+  "DHITsig+" = "#D62828",
+  "DHITsig-IND" = "#003049",
+  "DHITsig-"= "#B1740F",
+  "GCB"= "#F58F20",
   "ABC" = "#05ACEF",
-  "UNCLASS" = "#05631E",
   "U" = "#05631E",
   "UNC" = "#05631E",
-  "GCB"= "#F58F20",
-  "DHITsig-"= "#B1740F",
-  "DHITsig-IND" = "#003049",
-  "DHITsig+" = "#D62828"
+  "UNCLASS" = "#05631E"
 )
 
 ggsci_db$"ash"$"lymphgen" <-c(
-    "A53" = "#5b6d8a",
+    "EZB-MYC" = "#52000F",
     "EZB" = "#721F0F",
     "EZB-COMP" = "#C7371A",
     "ST2" = "#C41230",
     "ST2-COMP" = "#EC3251",
     "MCD" = "#3B5FAC",
     "MCD-COMP" = "#6787CB",
-    "N1" = "#55B55E",
-    "N1-COMP" = "#7FC787",
     "BN2" =  "#7F3293",
     "BN2-COMP" = "#A949C1",
+    "N1" = "#55B55E",
+    "N1-COMP" = "#7FC787",
+    "A53" = "#5b6d8a",
     "Other" = "#ACADAF"
 )
 
