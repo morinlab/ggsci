@@ -2,26 +2,26 @@
 % Please edit documentation in R/discrete-blood.R
 \name{pal_ash}
 \alias{pal_ash}
-\title{NPG Journal Color Palettes}
+\title{ASH Journal Color Palettes}
 \usage{
-pal_ash(palette = c("blood"), alpha = 1)
+pal_ash(palette = c("blood", "lymphgen"), alpha = 1)
 }
 \arguments{
 \item{palette}{Palette type.
 Currently there is one available option: \code{"blood"}
-(10-color palette inspired by \emph{Blood Journal}).}
+(15-color palette used by the American Society of Hematology's \emph{Blood Journal}).}
 
 \item{alpha}{Transparency level, a real number in (0, 1].
 See \code{alpha} in \code{\link[grDevices]{rgb}} for details.}
 }
 \description{
 Color palettes inspired by plots in journals published by
-Nature Publishing Group, such as \emph{Nature Reviews Cancer}.
+ASH such as \emph{Blood}.
 }
 \examples{
 library("scales")
-show_col(pal_ash("blood")(10))
-show_col(pal_ash("blood", alpha = 0.6)(10))
+show_col(pal_ash("blood")(15))
+show_col(pal_ash("blood", alpha = 0.6)(15))
 }
 \author{
 Ryan Morin <\email{rdmorin@sfu.ca}> |

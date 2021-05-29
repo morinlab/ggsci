@@ -6,16 +6,16 @@
 \alias{scale_fill_ash}
 \title{NPG Journal Color Scales}
 \usage{
-scale_color_ash(palette = c("blood"), alpha = 1, ...)
+scale_color_ash(palette = c("blood", "lymphgen"), alpha = 1, ...)
 
-scale_colour_ash(palette = c("blood"), alpha = 1, ...)
+scale_colour_ash(palette = c("blood", "lymphgen"), alpha = 1, ...)
 
-scale_fill_ash(palette = c("blood"), alpha = 1, ...)
+scale_fill_ash(palette = c("blood", "lymphgen"), alpha = 1, ...)
 }
 \arguments{
 \item{palette}{Palette type.
 Currently there is one available option: \code{"blood"}
-(10-color palette inspired by \emph{Blood Journal}).}
+(15-color palette used by the American Society of Hematology's \emph{Blood Journal}).}
 
 \item{alpha}{Transparency level, a real number in (0, 1].
 See \code{alpha} in \code{\link[grDevices]{rgb}} for details.}

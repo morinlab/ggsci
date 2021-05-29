@@ -471,7 +471,7 @@ ggsci_db$"material"$"blue-grey" <- c(
 )
 
 save(ggsci_db, file = "R/sysdata.rda")
-
+usethis::use_data(ggsci_db,overwrite = TRUE)
 # test_barplot <- function(palette, type) {
 #   pal <- ggsci_db[[palette]][[type]]
 #   barplot(rep(1, length(pal)), col = pal)

@@ -1,7 +1,20 @@
-#' NPG Journal Color Palettes
+#' Get a named vector of colours
+#'
+#' @param palette 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+get_ash <- function(palette=c("blood","lymphgen","coo")){
+  raw_cols <- ggsci_db$"ash"[[palette]]
+  return(raw_cols)
+}
+
+#' ASH Journal Color Palettes
 #'
 #' Color palettes inspired by plots in journals published by
-#' Nature Publishing Group, such as \emph{Nature Reviews Cancer}.
+#' ASH such as \emph{Blood}.
 #'
 #' @param palette Palette type.
 #' Currently there is one available option: \code{"blood"}
