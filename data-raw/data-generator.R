@@ -16,6 +16,41 @@ ggsci_db$"npg"$"nrc" <- c(
   "RomanCoffee" = "#7E6148", "Sandrift" = "#B09C85"
 )
 
+ggsci_db$"ash"$"blood" <-c(
+  "Red" = "#c41230", "Blue"="#115284","Green" = "#39b54b",
+  "Purple" = "#5c266c", "Orange"="#fe9003","Green" = "#046852",
+  "Lavendar" = "#8781bd", "Steel Blue"= "#455564",
+  "Light Blue" = "#2cace3", "Magenta" = "#e90c8b", "Mustard" = "#b76d29",
+  "LimeGreen" = "#a4bb87", "Brown" = "#5f3a17", "Gray" = "#bdbdc1",
+  "Yellow" = "#f9bd1f"
+)
+
+ggsci_db$"ash"$"coo" <-c(
+  "ABC" = "#05ACEF",
+  "UNCLASS" = "#05631E",
+  "U" = "#05631E",
+  "UNC" = "#05631E",
+  "GCB"= "#F58F20",
+  "DHITsig-"= "#F58F20",
+  "DHITsig-IND" = "#003049",
+  "DHITsig+" = "#D62828"
+)
+
+ggsci_db$"ash"$"lymphgen" <-c(
+    "A53" = "#5b6d8a",
+    "EZB" = "#721F0F",
+    "EZB-COMP" = "#C7371A",
+    "ST2" = "#C41230",
+    "ST2-COMP" = "#EC3251",
+    "MCD" = "#3B5FAC",
+    "MCD-COMP" = "#6787CB",
+    "N1" = "#55B55E",
+    "N1-COMP" = "#7FC787",
+    "BN2" =  "#7F3293",
+    "BN2-COMP" = "#A949C1",
+    "Other" = "#ACADAF"
+)
+
 # Color palette inspired by plots in Science from AAAS
 ggsci_db$"aaas"$"default" <- c(
   "Chambray" = "#3B4992", "Red" = "#EE0000",

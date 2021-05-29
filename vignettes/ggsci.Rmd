@@ -55,6 +55,9 @@ summarized in the table below.
 | JCO             | `scale_color_jco()`          | `"default"`                    | `pal_jco()`          |
 |                 | `scale_fill_jco()`           |                                |                      |
 +-----------------+------------------------------+--------------------------------+----------------------+
+| ASH             | `scale_color_ash()`          | `"blood"`                      | `pal_ash()`          |
+|                 | `scale_fill_ash()`           | `"lymphgen"`                   |                      |
++-----------------+------------------------------+--------------------------------+----------------------+
 | UCSCGB          | `scale_color_ucscgb()`       | `"default"`                    | `pal_ucscgb()`       |
 |                 | `scale_fill_ucscgb()`        |                                |                      |
 +-----------------+------------------------------+--------------------------------+----------------------+
@@ -199,6 +202,17 @@ The JCO palette is inspired by the the plots in
 p1_jco <- p1 + scale_color_jco()
 p2_jco <- p2 + scale_fill_jco()
 grid.arrange(p1_jco, p2_jco, ncol = 2)
+```
+
+## ASH
+
+The ASH palette is inspired by (and uses the preferred colour codes as) the the plots in
+<emph>Blood and Blood Advances</emph>:
+
+```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
+p1_ash <- p1 + scale_color_ash()
+p2_ash <- p2 + scale_fill_ash()
+grid.arrange(p1_ash, p2_ash, ncol = 2)
 ```
 
 ## UCSCGB
