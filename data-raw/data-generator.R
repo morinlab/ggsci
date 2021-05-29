@@ -17,7 +17,6 @@ ggsci_db$"npg"$"nrc" <- c(
 )
 
 ggsci_db$"ash"$"b-cell" =  c(
-  "DLBCL"="#479450",
   "B-ALL"="#C1C64B",
   "BL"="#926CAD",
   "FL"="#EA8368",
@@ -26,8 +25,11 @@ ggsci_db$"ash"$"b-cell" =  c(
   "MM"="#CC9A42",
   "COMFL"="#8BBC98",
   "PBL" = "#E058C0",
-  "DLBCL-BL-like"="#34C7F4",
-  "HGBL"="#B23F52",
+  "mBL"="#34C7F4",
+  "PMBL"= "#227C9D",
+  "DLBCL"="#479450",
+  "HGBL-NOS"="#294936",
+  "HGBL-DH/TH"="#7A1616",
   "SCBC"="#8c9c90",
   "UNSPECIFIED"="#cfba7c"
 )
@@ -41,13 +43,23 @@ ggsci_db$"ash"$"blood" <-c(
   "Yellow" = "#f9bd1f"
 )
 
+ggsci_db$"ash"$"harvard" <-c(
+  
+  "C2" = "#5b6d8a",
+  "C3" = "#721F0F",
+  "C4" = "#C41230",
+  "C5"= "#3B5FAC",
+  "C1" = "#7F3293",
+  "C0" = "#ACADAF"
+)
+
 ggsci_db$"ash"$"coo" <-c(
   "ABC" = "#05ACEF",
   "UNCLASS" = "#05631E",
   "U" = "#05631E",
   "UNC" = "#05631E",
   "GCB"= "#F58F20",
-  "DHITsig-"= "#F58F20",
+  "DHITsig-"= "#B1740F",
   "DHITsig-IND" = "#003049",
   "DHITsig+" = "#D62828"
 )
