@@ -18,18 +18,20 @@ ggsci_db$"npg"$"nrc" <- c(
 
 ggsci_db$"ash"$"b-cell" =  c(
   "B-ALL"="#C1C64B",
-  "BL"="#926CAD",
-  "FL"="#EA8368",
   "CLL"="#889BE5",
   "MCL"="#F37A20",
-  "MM"="#CC9A42",
-  "COMFL"="#8BBC98",
-  "PBL" = "#E058C0",
+  "BL"="#926CAD",
   "mBL"="#34C7F4",
   "PMBL"= "#227C9D",
+  "FL"="#EA8368",
+  "COMFL"="#8BBC98",
   "DLBCL"="#479450",
   "HGBL-NOS"="#294936",
   "HGBL-DH/TH"="#7A1616",
+  "PBL" = "#E058C0",
+  "CNS" = "#E2EF60",
+  "THRLBCL" = "#A5F2B3",
+  "MM"="#CC9A42",
   "SCBC"="#8c9c90",
   "UNSPECIFIED"="#cfba7c"
 )
