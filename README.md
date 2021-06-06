@@ -27,6 +27,8 @@ devtools::install_github("nanxstats/ggsci")
 
 ## Lymphoma-centric colours
 
+![Cheatsheet](DLBCL_cheatsheet.png)
+
 ### General B-NHL subgroups of (or related to) DLBCL
 
 b_cell_nhl_cols=ggsci::get_ash("b-cell")
