@@ -29,6 +29,7 @@ devtools::install_github("nanxstats/ggsci")
 
 ### General B-NHL subgroups of (or related to) DLBCL
 
+b_cell_nhl_cols=ggsci::get_ash("b-cell")
 
 |  Pathology  |   hex   |
 |:-----------:|:-------:|
@@ -103,6 +104,11 @@ lymphgen_cols=ggsci::get_ash("lymphgen")
 | Other    | #ACADAF |
 
 ## HMRN classes from Lacy et al with updates described in Runge et al
+
+```r
+hmrn_cols=ggsci::get_ash("hmrn")
+```
+
 | HMRN       | hex     |
 |------------|---------|
 | BCL2-MYC   | #52000F |
