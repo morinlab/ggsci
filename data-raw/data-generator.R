@@ -24,6 +24,7 @@ ggsci_db$"ash"$"b-cell" =  c(
   "mBL"="#34C7F4",
   "PMBL"= "#227C9D",
   "FL"="#EA8368",
+  "tFL" = "#EA8368",
   "COMFL"="#8BBC98",
   "DLBCL"="#479450",
   "HGBL-NOS"="#294936",

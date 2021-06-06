@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-get_ash <- function(palette=c("blood","lymphgen","coo")){
+get_ash <- function(palette=c("blood","lymphgen","coo","hmrn","b-cell")){
   raw_cols <- ggsci_db$"ash"[[palette]]
   return(raw_cols)
 }

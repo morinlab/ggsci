@@ -4,7 +4,7 @@
 \alias{get_ash}
 \title{Get a named vector of colours}
 \usage{
-get_ash(palette = c("blood", "lymphgen", "coo"))
+get_ash(palette = c("blood", "lymphgen", "coo", "hmrn", "b-cell"))
 }
 \arguments{
 \item{palette}{}
