@@ -70,6 +70,11 @@ devtools::install_github("nanxstats/ggsci")
 | C0      | #ACADAF |
 
 ## LymphGen classes from Schmitz et al with updates described in Wright et al
+
+```r
+lymphgen_cols=ggsci::get_ash("lymphgen")
+```
+
 | LymphGen | hex     |
 |----------|---------|
 | EZB-MYC  | #52000F |
