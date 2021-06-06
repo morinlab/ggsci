@@ -29,6 +29,7 @@ devtools::install_github("nanxstats/ggsci")
 
 ### General B-NHL subgroups of (or related to) DLBCL
 
+
 |  Pathology  |   hex   |
 |:-----------:|:-------:|
 | CLL         | #889BE5 |
@@ -50,6 +51,11 @@ devtools::install_github("nanxstats/ggsci")
 | UNSPECIFIED | #cfba7c |
 
 ## Cell of origin and gene expression subgroups
+
+```r
+coo_cols=ggsci::get_ash("coo")
+```
+
 | COO         | hex     |
 |-------------|---------|
 | DHITsig+    | #D62828 |
@@ -60,6 +66,11 @@ devtools::install_github("nanxstats/ggsci")
 | UNCLASS     | #05631E |
 
 ## Genetic classes from Chapuy et al
+
+```r
+harvard_cols=ggsci::get_ash("harvard")
+```
+
 | Harvard | hex     |
 |---------|---------|
 | C3      | #721F0F |
