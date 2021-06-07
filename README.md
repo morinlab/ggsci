@@ -33,6 +33,8 @@ devtools::install_github("nanxstats/ggsci")
 
 b_cell_nhl_cols=ggsci::get_ash("b-cell")
 
+![B-NHL](b-cell.png)
+
 |  Pathology  |   hex   |
 |:-----------:|:-------:|
 | CLL         | #889BE5 |
