@@ -5,24 +5,98 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(kableExtra)
+library(tidyverse)
+#devtools::install_github("morinlab/ggsci")
+library(ggsci)
+library(gridExtra)
 ```
 
 ## Hex codes for B-cell lymphomas
 
+```{r full_image, echo=FALSE, message=FALSE}
+path_cols=ggsci::get_ash("b-cell")
+remove_composite=TRUE
+include_nhl=TRUE
+  path_df = data.frame(Pathology=factor(names(path_cols),levels=names(path_cols)),hex=path_cols) %>%
+    filter(!Pathology %in% c("B-ALL","PMBCL"))
+
+  nhl = ggplot(path_df,aes(x=Pathology,y=0,fill=hex,label=Pathology)) +
+    geom_tile(width = 0.9, height = 1) +
+    geom_text(color = "white",fontface="bold") +
+    scale_fill_identity(guide = "none") +coord_flip() + theme_void() +
+    labs(title="B-NHL") + theme(plot.title = element_text(lineheight = 0.9,hjust=0.5,face="bold"))
+
+
+  coo_cols=ggsci::get_ash("coo")
+  coo_df = data.frame(COO=factor(names(coo_cols),levels=names(coo_cols)),hex=coo_cols) %>%
+    filter(!COO=="U" & !COO=="UNC")
+  coo = ggplot(coo_df,aes(x=COO,y=0,fill=hex,label=COO)) +
+    geom_tile(width = 0.9, height = 1) +
+    geom_text(color = "white",fontface="bold") +
+    scale_fill_identity(guide = "none") +coord_flip() + theme_void() +
+    labs(title="COO") + theme(plot.title = element_text(lineheight = 0.9,hjust=0.5,face="bold"))
+
+  harvard_cols=ggsci::get_ash("harvard")
+
+  harvard_df = data.frame(Harvard=factor(names(harvard_cols),levels=names(harvard_cols)),hex=harvard_cols)
+
+  harvard = ggplot(harvard_df,aes(x=Harvard,y=0,fill=hex,label=Harvard)) +
+    geom_tile(width = 0.9, height = 1) +
+    geom_text(color = "white",fontface="bold") +
+    scale_fill_identity(guide = "none") +coord_flip() + theme_void() +
+    labs(title="Harvard") + theme(plot.title = element_text(lineheight = 0.9,hjust=0.5,face="bold"))
+
+
+  lymphgen_cols=ggsci::get_ash("lymphgen")
+  #lymphgen_cols=c("#52000F",lymphgen_cols)
+  #names(lymphgen_cols)[1]="EZB-M+"
+
+  lymphgen_df = data.frame(LymphGen=factor(names(lymphgen_cols),levels=names(lymphgen_cols)),hex=lymphgen_cols)
+  if(remove_composite){
+    lymphgen_df = filter(lymphgen_df,LymphGen %in% c("Other","A53","N1","BN2","MCD","ST2","EZB","EZB-MYC"))
+  }
+  lymphgen = ggplot(lymphgen_df,aes(x=LymphGen,y=0,fill=hex,label=LymphGen)) +
+    geom_tile(width = 0.9, height = 1) +
+    geom_text(color = "white",fontface="bold") +
+    scale_fill_identity(guide = "none") +coord_flip() + theme_void() +
+    labs(title="LymphGen") + theme(plot.title = element_text(lineheight = 0.9,hjust=0.5,face="bold"))
+
+  hmrn_cols = ggsci::get_ash("hmrn")
+
+  #hmrn_cols=c("#52000F",hmrn_cols)
+  #names(hmrn_cols)[1]="BCL2-MYC"
+
+  hmrn_df = data.frame(HMRN=factor(names(hmrn_cols),levels=names(hmrn_cols)),hex=hmrn_cols)
+
+  hmrn = ggplot(hmrn_df,aes(x=HMRN,y=0,fill=hex,label=HMRN)) +
+    geom_tile(width = 0.9, height = 1) +
+    geom_text(color = "white",fontface="bold") +
+    scale_fill_identity(guide = "none") +coord_flip() + theme_void() +
+    labs(title="HMRN") + theme(plot.title = element_text(lineheight = 0.9,hjust=0.5,face="bold"))
+  #hmrn_cols = c(lymphgen_cols[2],"#D66B1F",lymphgen_cols[c(4,6,10,12)])
+  #names(hmrn_cols)=c("BCL2","SOCS1/SGK1","TET2/SGK1","MYD88","NOTCH2","Other")
+  if(include_nhl){
+    grid.arrange(nhl,coo,harvard,lymphgen,hmrn,ncol = 5)
+
+  }else{
+    grid.arrange(coo,harvard,lymphgen,hmrn,ncol = 5)
+  }
+
+```
+
 ### General palette
 
+
 ```{r cars,echo=FALSE,message=FALSE}
-library(kableExtra)
-library(tidyverse)
-#devtools::install_github("morinlab/ggsci",quiet=T)
-library(ggsci)
+
 
 show_col = function(x){
   cols=ggsci::get_ash(x)
   col_df = data.frame(Name=names(cols),Code=unname(cols))
   col_df %>%
   kbl() %>%
-  kable_paper(full_width = F) %>%
+  kable_styling(full_width = T) %>%
   
   column_spec(1, color = "white",
               background = col_df$Code) %>% 
@@ -35,15 +109,50 @@ show_col("b-cell")
 
 ```
 
-### Cell of Origin
+### Cell of Origin / Gene Expression Subgroups
 
 ```{r coo, echo=FALSE}
-show_col("coo")
+#show_col("coo")
+
+cols=ggsci::get_ash("coo")
+col_df = data.frame(Name=names(cols),Code=unname(cols))
+col1 = col_df %>% filter(!str_detect(Name,"DHIT")) %>% filter(!Name %in% c("MHG","mBL"))
+col2 = col_df %>% filter(str_detect(Name,"DHIT") | Name %in% c("MHG","mBL"))
+paired=cbind(col1,col2)
+paired %>%
+  kbl() %>%
+  kable_styling(full_width = T) %>%
+  column_spec(1, color = "white",
+              background = paired[,2]) %>%
+  column_spec(2, color = "white",
+              background = paired[,2]) %>% 
+    column_spec(3, color = "white",
+              background = paired[,4]) %>% 
+    column_spec(4, color = "white",
+              background = paired[,4])
+
+
 ```
 
-### LymphGen classes
+### LymphGen classes with Composite classes
 ```{r lg, echo=FALSE }
-show_col("lymphgen")
+cols=ggsci::get_ash("lymphgen")
+  col_df = data.frame(Name=names(cols),Code=unname(cols))
+col1 = col_df %>% filter(!str_detect(Name,"COM")) %>% filter(!Name %in% c("Other","EZB-MYC"))
+col2 = col_df %>% filter(str_detect(Name,"COM") | Name %in% c("Other"))
+paired=cbind(col1,col2)
+paired %>%
+  kbl() %>%
+  kable_styling(full_width = T) %>%
+  column_spec(1, color = "white",
+              background = paired[,2]) %>%
+  column_spec(2, color = "white",
+              background = paired[,2]) %>% 
+    column_spec(3, color = "white",
+              background = paired[,4]) %>% 
+    column_spec(4, color = "white",
+              background = paired[,4])
+
 ```
 
 ### Harvard clusters
