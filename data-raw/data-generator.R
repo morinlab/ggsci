@@ -67,7 +67,7 @@ ggsci_db$"ash"$"harvard" <-c(
 )
 
 ggsci_db$"ash"$"coo" <-c(
-  "mBL"="#34C7F4",
+  "mBL"="#D999B9",
   "MHG" = "#C028E0",
   "DHITsig+" = "#D62828",
   "DHITsig-IND" = "#003049",
