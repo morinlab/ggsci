@@ -21,7 +21,6 @@ ggsci_db$"ash"$"b-cell" =  c(
   "CLL"="#889BE5",
   "MCL"="#F37A20",
   "BL"="#926CAD",
-  "mBL"="#34C7F4",
   "PMBL"= "#227C9D",
   "PMBCL"= "#227C9D",
   "FL"="#EA8368",
@@ -68,6 +67,7 @@ ggsci_db$"ash"$"harvard" <-c(
 )
 
 ggsci_db$"ash"$"coo" <-c(
+  "mBL"="#34C7F4",
   "MHG" = "#C028E0",
   "DHITsig+" = "#D62828",
   "DHITsig-IND" = "#003049",
