@@ -1,0 +1,63 @@
+---
+title: "B-NHL colours"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Hex codes for B-cell lymphomas
+
+### General palette
+
+```{r cars,echo=FALSE,message=FALSE}
+library(kableExtra)
+library(tidyverse)
+#devtools::install_github("morinlab/ggsci",quiet=T)
+library(ggsci)
+
+show_col = function(x){
+  cols=ggsci::get_ash(x)
+  col_df = data.frame(Name=names(cols),Code=unname(cols))
+  col_df %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  
+  column_spec(1, color = "white",
+              background = col_df$Code) %>% 
+    column_spec(2, color = "white",
+              background = col_df$Code)
+}
+
+show_col("b-cell")
+
+
+```
+
+### Cell of Origin
+
+```{r coo, echo=FALSE}
+show_col("coo")
+```
+
+### LymphGen classes
+```{r lg, echo=FALSE }
+show_col("lymphgen")
+```
+
+### Harvard clusters
+```{r harvard, echo=FALSE }
+show_col("harvard")
+```
+
+### HMRN classes
+```{r hmrn, echo=FALSE }
+show_col("hmrn")
+```
+
+### ASH family journals
+```{r blood, echo=FALSE }
+show_col("blood")
+```
+
