@@ -33,7 +33,7 @@ devtools::install_github("nanxstats/ggsci")
 
 b_cell_nhl_cols=ggsci::get_ash("b-cell")
 
-![B-NHL](b-cell.png)
+<img src="b-cell.png" width="200">
 
 |  Pathology  |   hex   |
 |:-----------:|:-------:|
