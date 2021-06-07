@@ -29,7 +29,7 @@ devtools::install_github("nanxstats/ggsci")
 
 ![Cheatsheet](DLBCL_cheatsheet.png)
 
-For HTML versions of these tables with embedded colours, see (this page)[https://refined-github-html-preview.kidonng.workers.dev/morinlab/ggsci/raw/master/B-NHL.html].
+For HTML versions of these tables with embedded colours, see [this page](https://refined-github-html-preview.kidonng.workers.dev/morinlab/ggsci/raw/master/B-NHL.html).
 
 ### General B-NHL subgroups of (or related to) DLBCL
 
