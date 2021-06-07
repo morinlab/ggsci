@@ -15,6 +15,14 @@ ggsci_db$"npg"$"nrc" <- c(
   "MonteCarlo" = "#91D1C2", "Monza" = "#DC0000",
   "RomanCoffee" = "#7E6148", "Sandrift" = "#B09C85"
 )
+ggsci_db$"ash"$"clinical" = c(
+    "M"="#118AB2",
+    "Male"="#118AB2",
+    "F"="#EF476F",
+    "Female"="#EF476F",
+    "EBV-positive" = "#FFD92F",
+    "EBV-negative" = "#E5C494"
+)
 
 ggsci_db$"ash"$"b-cell" =  c(
   "B-ALL"="#C1C64B",
