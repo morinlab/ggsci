@@ -91,10 +91,13 @@ include_nhl=TRUE
 ```{r cars,echo=FALSE,message=FALSE}
 
 
-show_col = function(x){
+show_col = function(x,extra_cols=c(),to_drop=c()){
   cols=ggsci::get_ash(x)
+  
+  cols=c(cols,extra_cols)
   col_df = data.frame(Name=names(cols),Code=unname(cols))
-  col_df %>%
+  col_df = col_df %>%   filter(!Name %in% to_drop)
+  col_df %>% 
   kbl() %>%
   kable_styling(full_width = T) %>%
   
@@ -164,6 +167,33 @@ show_col("harvard")
 ```{r hmrn, echo=FALSE }
 show_col("hmrn")
 ```
+
+### Clinical variables
+```{r clinical, echo=FALSE }
+blood_cols=ggsci::get_ash("blood")
+binary=c(
+  "POS"="#c41230",
+    "NEG"="#E88873",
+    "FAIL"="#bdbdc1",
+  "Alive"="#046852",
+  "Dead"="#a4bb87",
+  "IPI_0"= "#3B9AB2",
+  "IPI_1"= "#78B7C5",
+  "IPI_2" = "#EBCC2A",
+  "IPI_3" = "#E1AF00",
+  "IPI_4" = "#F21A00",
+  "Adult" = "#5c266c",
+  "Pediatric" = "#8781bd",
+  "Diagnosis"="#F1BB7B",
+  "Progression"="#FD6467",
+  "Relapse"="#5B1A18",
+  "I"="#75F4F4",
+  "II"="#90E0F3",
+  "IIIA"="#B8B3E9",
+  "IIIB"="#D999B9")
+show_col(x="clinical",to_drop=c("M","F")) #add colours that aren't in ggsci (yet)
+```
+
 
 ### ASH family journals
 ```{r blood, echo=FALSE }
