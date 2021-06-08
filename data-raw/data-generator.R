@@ -40,7 +40,11 @@ ggsci_db$"ash"$"clinical" = c(
       "I"="#75F4F4",
       "II"="#90E0F3",
       "IIIA"="#B8B3E9",
-      "IIIB"="#D999B9"
+      "IIIB"="#D999B9",
+    "matched"="#F0B67F",
+    "unmatched"="#D6D1B1",
+    "FF"="#009FFD",
+    "FFPE"="#95B2B8"
 )
 
 ggsci_db$"ash"$"b-cell" =  c(
