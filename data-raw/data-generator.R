@@ -44,6 +44,7 @@ ggsci_db$"ash"$"clinical" = c(
     "matched"="#F0B67F",
     "unmatched"="#D6D1B1",
     "FF"="#009FFD",
+    "frozen"="#009FFD",
     "FFPE"="#95B2B8",
     "ctDNA"="#7E6148"
 )
