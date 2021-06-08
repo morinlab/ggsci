@@ -37,7 +37,9 @@ ggsci_db$"ash"$"clinical" = c(
       "IPI_3" = "#E1AF00",
       "IPI_4" = "#F21A00",
       "Adult" = "#5c266c",
+    "adult" = "#5c266c",
       "Pediatric" = "#8781bd",
+    "pediatric" = "#8781bd",
     "Diagnosis"="#E57A44",
     "A"="#E57A44",
     "B"="#721817",
@@ -59,7 +61,8 @@ ggsci_db$"ash"$"clinical" = c(
     "FF"="#009FFD",
     "frozen"="#009FFD",
     "FFPE"="#95B2B8",
-    "ctDNA"="#7E6148"
+    "ctDNA"="#7E6148",
+    "NA"="white"
 )
 
 ggsci_db$"ash"$"b-cell" =  c(
