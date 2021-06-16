@@ -80,16 +80,24 @@ include_nhl=TRUE
     labs(title="HMRN") + theme(plot.title = element_text(lineheight = 0.9,hjust=0.5,face="bold"))
   #hmrn_cols = c(lymphgen_cols[2],"#D66B1F",lymphgen_cols[c(4,6,10,12)])
   #names(hmrn_cols)=c("BCL2","SOCS1/SGK1","TET2/SGK1","MYD88","NOTCH2","Other")
-
-  clin_cols=ggsci::get_ash("clinical")
-  clin_df = data.frame(Clinical=factor(names(clin_cols),levels=rev(names(clin_cols))),hex=clin_cols) %>% filter(!Clinical %in% c("M","F"))
-   clin = ggplot(clin_df,aes(x=Clinical,y=0,fill=hex,label=Clinical)) +
+exclude=c("M","F","A","B","C","D","E","I","II","IIIA","IIIB","FF","unknown","FAIL", "alive","dead","deceased","adult","ctDNA","pediatric","NA")
+  clin_cols=ggsci::get_ash("clinical") 
+  clin_df = data.frame(Clinical=factor(names(clin_cols),levels=rev(names(clin_cols))),hex=clin_cols) %>% filter(!Clinical %in% exclude)
+clin1 = head(clin_df,13) %>% 
+  ggplot(aes(x=Clinical,y=0,fill=hex,label=Clinical)) +
+    geom_tile(width = 0.9, height = 1) +
+    geom_text(color = "white",fontface="bold") +
+    scale_fill_identity(guide = "none") +coord_flip() + theme_void() +
+    labs(title="Clinical") + theme(plot.title = element_text(lineheight = 0.9,hjust=0.5,face="bold"))
+clin2 = tail(clin_df,13) %>% 
+  ggplot(aes(x=Clinical,y=0,fill=hex,label=Clinical)) +
     geom_tile(width = 0.9, height = 1) +
     geom_text(color = "white",fontface="bold") +
     scale_fill_identity(guide = "none") +coord_flip() + theme_void() +
     labs(title="Clinical") + theme(plot.title = element_text(lineheight = 0.9,hjust=0.5,face="bold"))
   if(include_nhl){
-    grid.arrange(nhl,coo,harvard,lymphgen,hmrn,clin,ncol = 6)
+    grid.arrange(clin1,clin2,nhl,ncol = 3)
+    grid.arrange(coo,harvard,lymphgen,hmrn,ncol=4)
 
   }else{
     grid.arrange(coo,harvard,lymphgen,hmrn,ncol = 5)
@@ -184,7 +192,7 @@ show_col("hmrn")
 ```{r clinical, echo=FALSE }
 blood_cols=ggsci::get_ash("blood")
 extra=c()
-show_col(x="clinical",to_drop=c("M","F"),extra_cols = extra) #add colours that aren't in ggsci (yet)
+show_col(x="clinical",to_drop=c("M","F","A","B","C","D","E","I","II","IIIA","IIIB"),extra_cols = extra) #add colours that aren't in ggsci (yet)
 ```
 
 
