@@ -82,6 +82,7 @@ ggsci_db$"ash"$"b-cell" =  c(
   "CNS" = "#C1C64F",
   "THRLBCL" = "#A5F2B3",
   "MM"="#CC9A42",
+  "MZL"="#065A7F",
   "SCBC"="#8c9c90",
   "UNSPECIFIED"="#cfba7c"
 )
