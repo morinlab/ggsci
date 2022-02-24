@@ -139,8 +139,9 @@ show_col("b-cell")
 
 cols=ggsci::get_ash("coo")
 col_df = data.frame(Name=names(cols),Code=unname(cols))
-col1 = col_df %>% filter(!str_detect(Name,"DHIT")) %>% filter(!Name %in% c("MHG","mBL"))
-col2 = col_df %>% filter(str_detect(Name,"DHIT") | Name %in% c("MHG","mBL"))
+col1 = col_df %>% filter(Name %in% c("MHG","mBL","UNCLASS","DHITsig-IND"))
+col2 = col_df %>%  
+  filter(!Name %in%  c("MHG","mBL","UNC","DHITsig-IND","U","UNCLASS"))
 paired=cbind(col1,col2)
 paired %>%
   kbl() %>%
